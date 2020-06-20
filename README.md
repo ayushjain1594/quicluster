@@ -1,10 +1,10 @@
 # Quicluster
-*Python based implementation of modified Kruskal's algorithm for finding clusters/trees from graph with possible limitations on total arc weights and node weights in clusters*
+*Python based implementation of modified Kruskal's algorithm for finding clusters or forest of trees from graph with potential limitations on total tree arc weight and total node weights in clusters*
 
 ## Background
-In Operations Research, while solving problems on large graphs long compute times may call for level of aggregation in terms of clusters of nodes or set of minimum spanning trees. Several techniques are available to create such clusters however they may take significant time themselves or require specifying number of clusters. The motivation for this algorithm comes from limitations on the size of cluster, max weight of all nodes in cluster (if nodes have different weight) and max weight of minimum spanning tree arcs in cluster.
+In Operations Research, while solving problems on large graphs long compute times may call for level of aggregation in terms of clusters of nodes or set of minimum spanning trees. Several techniques are available to create such clusters however they may take significant time themselves or require specifying number of clusters. The motivation for this algorithm comes from limitations on the size of cluster, max weight of all nodes in cluster (if nodes have different weight) and max MST weight of arcs in cluster.
 
-Simple example can be delivery routing where there is typically max capacity of vehicle and max drive time for drivers from DOT regulations. Such limitations can require several tours to be created for all deliveries. In such example, customers can be considered as nodes and their package size be the node weight. All OD combinations can be considered as arcs with drive time as arc weight. The algorithm, with inputs for package weights and some MST estimate equivalent to max drive time, could then generate clusters of customers and corresponding minimum spanning tree. This minimum spanning tree could further be used as input to another routing heuristic to solve TSP.
+Simple example can be delivery routing where there is typically max capacity of vehicle and max drive time for drivers from DOT regulations. Such limitations may require several tours to be created for all deliveries. In such example, customers can be considered as nodes with their package size as node weight. All OD combinations can be considered as arcs with drive time as arc weight. The algorithm, with inputs for package weights and some MST estimate equivalent to max drive time, could then generate clusters of customers and corresponding minimum spanning tree. This minimum spanning tree could further be used as input to another routing heuristic to solve TSP.
 
 ## How it works
 Create graph object by calling
@@ -29,6 +29,8 @@ clusters = graph.getCluster(maxtreearcwt, maxtreenodewt)
 
 Output format
 ```python
+# SAMPLE OUTPUT
+
 {
 	5: {
 		'arcs':[(4, 5, 1), (5, 7, 1), (5, 8, 1)],
