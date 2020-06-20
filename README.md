@@ -24,7 +24,7 @@ graph.addEdge(u, v, w)
 
 Create clusters with max total node weights and max total MST arc weights
 ```python
-clusters = graph.getCluster(maxtreearcwt, maxtreenodewt)
+clusters = graph.getClusters(maxtreearcswt, maxtreenodeswt)
 ```
 
 Output format
