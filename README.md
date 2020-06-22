@@ -22,7 +22,7 @@ Add graph edges
 graph.addEdge(u, v, w)
 ```
 
-Create clusters with max total node weights and max total MST arc weights
+Create clusters with max total weight of nodes in cluster and max total weight of arcs in corresponding MST
 ```python
 clusters = graph.getClusters(maxtreearcswt, maxtreenodeswt)
 ```
@@ -59,4 +59,4 @@ Output format
 ```
 
 ## Running time
-Using disjoint set forest implementation with union by rank and path compression, the running time for this algortihm is no worse than *O(ElgV)*
+Using disjoint set forest implementation with union by rank and path compression, the running time for this algortihm is no worse than *O(ElgV)*.
